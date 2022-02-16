@@ -16,3 +16,11 @@ def test_category_to_indices_unpad():
     c = Category(cates, False)
     assert (c.c2i[inputs]==np.array(results_unpad)).all()
 
+def test_indices_to_categories_pad():
+    c = Category(cates, True)
+    assert (c.i2c[results_pad]==inputs+["[MST]"]).all()
+
+def test_indices_to_categories_unpad():
+    c = Category(cates, False)
+    assert (c.i2c[results_unpad]==inputs).all()
+

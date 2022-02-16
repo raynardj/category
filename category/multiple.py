@@ -22,8 +22,11 @@ class MultiCategory:
             for c in text.split(self.spliter))
 
     def string_to_index(self, text: str) -> List[int]:
-        return list(self.category.c2i[c]
-            for c in self.string_to_list(text))
+        """
+        Split the string to a list of categories
+        Then translate each category to index
+        """
+        return list(self.category.c2i[self.string_to_list(text)])
 
     def batch_strings_to_nhot(
         self, text_inputs: List[str]
@@ -34,7 +37,7 @@ class MultiCategory:
         empty = self.empty
         results = []
         for text_input in text_inputs:
-            row = empty.clone()
+            row = empty.copy()
             row[self.string_to_index(text_input)] = 1.
             results.append(row)
         return np.stack(results)
@@ -47,6 +50,4 @@ class MultiCategory:
         for row in nhot:
             results.append(list(self.category.i2c[row>.5]))
         return results
-
-    
 
