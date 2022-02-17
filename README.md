@@ -51,7 +51,7 @@ You can also try to convert a list of strings, containing multicategorical info 
 ```
 
 ## Performance
-The running spead of this library mostly depends on python dictionary and numpy operations. Though python a 'slow' language, such application is pretty fast, and not easy to improve using other language.
+The running speed of this library mostly depends on python dictionary and numpy operations. Though python is a 'slow' language, such application is pretty fast, and not easy to improve using other language.
 
 Here we compare the this library with the [Rust implementation](https://github.com/raynardj/rust_category)
 
