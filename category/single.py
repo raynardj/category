@@ -64,7 +64,7 @@ class C2I:
 
 class Category:
     """
-    Manage categorical translations
+    - Manage categorical translations
     c = Category(
             ["class 1", "class 2", ..., "class n"],
             pad_mst=True,)
