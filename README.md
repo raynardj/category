@@ -4,6 +4,7 @@
 [![PyPI version](https://img.shields.io/pypi/v/category)](https://pypi.org/project/category)
 ![Python version](https://img.shields.io/pypi/pyversions/category)
 ![License](https://img.shields.io/github/license/raynardj/category)
+[![Test](https://github.com/raynardj/category/actions/workflows/python-package-conda.yml/badge.svg)](https://github.com/raynardj/category/actions/workflows/python-package-conda.yml)
 ![PyPI Downloads](https://img.shields.io/pypi/dm/category)
 
 ## Installation
@@ -15,7 +16,10 @@ pip install category
 
 ## Single Category
 ```python
+# using python core
 >>> from category import Category
+# using rust core, faster
+>>> from category.fast import Category 
 >>> book = Category(['a', 'b', 'c', 'Category_d', 'e', 'f', 'g', 'h', 'i', 'j'], pad_mst = False)
 >>> book.i2c[2]
 'c'
@@ -26,7 +30,10 @@ array([3, 5])
 
 You can set ```pad_mst``` to ```True``` to handle the missing token
 ```python
->>> from category import Category
+# using python core
+>>> from category import Category 
+# using rust core, faster
+>>> from category.fast import Category 
 >>> book = Category(['a', 'b', 'c', 'Category_d', 'e', 'f', 'g', 'h', 'i', 'j'], pad_mst = True)
 >>> book.i2c[2] # the 1st token is the missing token, not 'a' any more
 'b'
@@ -36,7 +43,10 @@ array([0, 4, 0, 6])
 
 ## Multi-Category
 ```python
+# using python core
 >>> from category import (Category, MultiCategory)
+# using rust core, faster
+>>> from category.fast import (Category, MultiCategory)
 >>> cates = list(f"category{i}" for i in range(1000))
 >>> multi_cate = MultiCategory(Category(cates, pad_mst = True))
 >>> multi_cate.string_to_index("category42, category108")
@@ -51,7 +61,7 @@ You can also try to convert a list of strings, containing multicategorical info 
 ```
 
 ## Performance
-The running speed of this library mostly depends on python dictionary and numpy operations. Though python is a 'slow' language, such application is pretty fast, and not easy to improve using other language.
+The running speed of this library mostly depends on python dictionary and numpy operations. Though python is a 'slow' language, such application is pretty fast, our own rust alternative is faster, by not by a huge lead
 
 Here we compare the this library with the [Rust implementation](https://github.com/raynardj/rust_category)
 
