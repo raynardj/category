@@ -1,7 +1,7 @@
 # category
 > Categorical transformation for data science
 
-[![PyPI version](https://img.shields.io/pypi/v/tai-chi-engine)](https://pypi.org/project/category)
+[![PyPI version](https://img.shields.io/pypi/v/category)](https://pypi.org/project/category)
 ![Python version](https://img.shields.io/pypi/pyversions/category)
 ![License](https://img.shields.io/github/license/raynardj/category)
 ![PyPI Downloads](https://img.shields.io/pypi/dm/category)

@@ -1,4 +1,4 @@
-__version__ = '0.0.3'
+__version__ = "0.1.0"
 
 from .single import Category, C2I
 from .multiple import MultiCategory
